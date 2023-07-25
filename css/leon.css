@@ -8,9 +8,12 @@
     --section-padding:60px;
     --section-color: #F6F6F6;
 }
+html{
+    scroll-behavior: smooth;
+
+}
 body{
     font-family: 'Work Sans', sans-serif;
-    scroll-behavior: smooth;
     padding: 0;
 }
 header{
@@ -23,6 +26,22 @@ header{
     padding-left:15px ;
     padding-right: 15px;
     
+}
+@media (min-width:768px){
+    .container{
+        width:750px;
+    }
+}
+@media (min-width:992px){
+    .container{
+        width:970px;
+    }
+}
+
+@media (min-width:1200px){
+    .container{
+        width:1170px;
+    }
 }
 header .container{
     display: flex;
@@ -231,6 +250,7 @@ header .container .links ul::before{
     padding-top:var(--section-padding);
     padding-bottom:var(--section-padding);
     background-color: #f6f6f6;
+    
 }
 .portfolio .portfolio-content{
     display: grid;
@@ -256,37 +276,158 @@ header .container .links ul::before{
     line-height: 1.6;
     margin: 0
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width:768px){
-    .container{
-        width:750px;
+.about{
+    padding-top:var(--section-padding);
+    padding-bottom:var(--section-padding);
+}
+.about .about-content{
+    padding-top:80px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between
+}
+@media (max-width:991px){
+    .about .about-content{
+        flex-direction: column;
+        text-align: center;
     }
 }
-@media (min-width:992px){
-    .container{
-        width:970px;
+.about .about-content .image{
+    position:relative;
+    width:250px;
+    height:360px;
+    margin-right:280px;
+
+}
+@media(max-width:991px){
+    .about .about-content .image{
+        margin:0 auto 100px;
     }
+}
+.about .about-content .image img{
+    width:100%;
+}
+.about .about-content .image::before{
+    content:"";
+    position:absolute;
+    width: 100px;
+    background-color: #EBECED;
+    height:calc(100% + 80px);
+    left :-30px;
+    top:-40px;
+    z-index: -1;
+}
+@media(max-width:991px){
+    .about .about-content .image::before,
+    .about .about-content .image::after{
+        display: none;
+    }
+
+}
+.about .about-content .image::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    border-bottom: solid 80px var(--main-color);
+    height: 274px;
+    border-left: solid 80px var(--main-color);
+    top: -40px;
+    right: -140px;
+    z-index: -1;
+}
+.about .about-content .about-text{
+    flex-basis: calc(100% - 530px);
+    
+}
+.about-content .about-text p{
+    line-height:1.6;
+}
+.about .about-content .about-text p:first-of-type{
+    font-weight:bold;
+    line-height:1.6;
+    margin-bottom:50PX;;
+
+}
+.about .about-content .about-text hr{
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+}
+.about .about-content .about-text p:last-of-type{
+    color:#797979
+}
+.contact{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: #f6f6f6;
+}
+.contact .contact-text{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    text-align : center
+}
+.contact .contact-text p{
+    font-size:40px;
+    font-weight:800;
+    color:var(--secondry-color);
+    margin:0 ; 
+    padding:50px 0 10px 0  ; 
+    letter-spacing:-2px
+}
+.contact .contact-text  a{
+    text-decoration: none;
+    font-size: 40px;
+    color: var(--main-color);
+    display: block;
+    font-weight:800;
+    padding-bottom: 20px;
+    letter-spacing:-2px
+    
+}
+@media(max-width:767px){
+    .contact .contact-text p,
+    .contact .contact-text  a{
+        font-size: 25px;
+    }
+}
+.contact .contact-text .social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color:var(--secondry-color)
+}
+.contact .contact-text .social i{
+    margin-left:10px;
+    
+}
+.footer {
+
+    padding: 30px ;
+    text-align:center;
+    background-color:var(--secondry-color);
+    color: white;
+    font-size: 18px;
+
+}
+.footer span{
+    color:var(--main-color);
+    font-weight:bold
 }
 
-@media (min-width:1200px){
-    .container{
-        width:1170px;
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
